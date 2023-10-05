@@ -9,6 +9,10 @@ from robots.utils.validators import check_correct_values
 
 @csrf_exempt
 def create_new_robot(request):
+    '''
+    API interface that handles JSON request data and provide the sender
+    with informative response
+    '''
     if request.method == 'POST':
         try:
             data = check_correct_values(request)
