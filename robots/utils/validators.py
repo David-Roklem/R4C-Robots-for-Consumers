@@ -24,7 +24,7 @@ def check_correct_values(request):
             f'Request data is missing {required_items - items}'
         )
 
-    # Check if 'model' and 'version' are strings and contain of exactly two
+    # Check if 'model' and 'version' are strings and contain exactly two
     # characters
     if not isinstance(data['model'], str):
         raise TypeError('"model" must be of type str')
@@ -32,7 +32,7 @@ def check_correct_values(request):
         raise TypeError('"version" must be of type str')
     if len(data['model']) != 2 or len(data['version']) != 2:
         raise ValueError(
-            '"model" or "version" must contain exactly of two characters'
+            '"model" or "version" must contain exactly two characters'
         )
 
     # Check if 'created' parameter is of correct datetime format
