@@ -10,8 +10,9 @@ from robots.utils.validators import check_correct_values
 @csrf_exempt
 def create_new_robot(request):
     '''
-    API interface that handles JSON request data and provide the sender
-    with informative response
+    API interface that handles JSON request data and
+    provide an informative response to the sender
+
     '''
     if request.method == 'POST':
         try:
@@ -33,4 +34,7 @@ def create_new_robot(request):
                 status=HTTPStatus.BAD_REQUEST
             )
     else:
-        return JsonResponse({'message': 'Invalid request method'})
+        return JsonResponse(
+            {"status": "error", "message": HTTPStatus.METHOD_NOT_ALLOWED.phrase},
+            status=HTTPStatus.METHOD_NOT_ALLOWED,
+        )
