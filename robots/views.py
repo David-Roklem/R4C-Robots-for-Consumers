@@ -35,6 +35,7 @@ def create_new_robot(request):
             )
     else:
         return JsonResponse(
-            {"status": "error", "message": HTTPStatus.METHOD_NOT_ALLOWED.phrase},
+            {"status": "error", "message": HTTPStatus.
+             METHOD_NOT_ALLOWED.phrase},
             status=HTTPStatus.METHOD_NOT_ALLOWED,
         )
