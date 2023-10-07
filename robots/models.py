@@ -11,4 +11,4 @@ class Robot(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return self.serial
+        return f'{self.serial}; {self.created}'

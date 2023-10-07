@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Robot
 from robots.utils.validators import check_correct_values
 
+from .utils.exel_report import generate_excel_report
+
 
 @csrf_exempt
 def create_new_robot(request):
@@ -27,6 +29,7 @@ def create_new_robot(request):
                 created=created
             )
             robot.save()
+            generate_excel_report()
             return JsonResponse({'message': 'Robot created successfully'})
         except (TypeError, ValueError) as e:
             return JsonResponse(
@@ -35,6 +38,7 @@ def create_new_robot(request):
             )
     else:
         return JsonResponse(
-            {"status": "error", "message": HTTPStatus.METHOD_NOT_ALLOWED.phrase},
+            {"status": "error", "message": HTTPStatus.
+             METHOD_NOT_ALLOWED.phrase},
             status=HTTPStatus.METHOD_NOT_ALLOWED,
         )
