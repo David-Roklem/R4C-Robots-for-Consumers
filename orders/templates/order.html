@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome to Russian Robotics</h1>
+  <hr>
+  <h4>Here you can submit your order</h4>
+  <form method="POST" action="{% url 'new_order' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-success btn-lg btn-block" role="button" type="submit" value="Submit">
+  </form>
+{% endblock %}

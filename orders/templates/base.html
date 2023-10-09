@@ -1,0 +1,28 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Russian Robotics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-sm-1">
+        {% block sidebar %}{% endblock %}
+        </div>
+        <div class="col-sm-10 ">
+        {% block content %}{% endblock %}
+        </div>
+      </div>
+    
+    </div>
+  </body>
+</html>
