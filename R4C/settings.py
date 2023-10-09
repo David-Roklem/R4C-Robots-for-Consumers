@@ -125,3 +125,10 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+RECIPIENTS_EMAIL = ['manager@mysite.com']   # замените на свою почту
+DEFAULT_FROM_EMAIL = 'admin@mysite.com'  # замените на свою почту
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
